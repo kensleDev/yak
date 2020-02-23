@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "build",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es2017",
+    "allowJs": true,
+    "sourceMap": true,
+    "paths": {
+      "@app/*": ["src/*"],
+      "@text": ["src/text/*"]
+      // "jquery": [
+      //   "node_modules/jquery/dist/jquery"
+      // ] // This mapping is relative to "baseUrl"
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
