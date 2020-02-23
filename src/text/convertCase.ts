@@ -40,15 +40,21 @@ export class CaseConverter {
         .trim()
         .split(dilimeter);
 
-    const splitOnUpper = (input: string) =>
-      input
+    const splitOnUpper = (input: string) => {
+      /* remove and reattch first character to avoid empty strings */
+
+      const inputWithoutFirst = input.substring(1);
+      const first = input.substring(0, 1);
+
+      const inputArr = inputWithoutFirst
         .replace(/([A-Z])/g, ",$1")
         .toLowerCase()
         .split(",");
-    // .map(data => {
-    //   if (data !== "") return data;
-    //   else
-    // });
+
+      inputArr[0] = first.toLowerCase() + inputArr[0];
+
+      return inputArr;
+    };
 
     if (caseFrom === "normal") return splittable(input, " ");
     else if (caseFrom === "kebab") return splittable(input, "-");

@@ -5,8 +5,11 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es2017",
-    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
+    "typeRoots": ["../node_modules/@types"],
+    "types": ["jest", "node"],
     "paths": {
       "@app/*": ["src/*"],
       "@text": ["src/text/*"]
