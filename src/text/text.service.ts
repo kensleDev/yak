@@ -1,8 +1,8 @@
 import { CaseConverter } from "./convertCase.class";
 import { Case } from "shared/models/text.models";
-import { _TextUtilsService } from "shared/models/text.implementations";
+import { _TextService } from "shared/models/text.implementations";
 
-export class TextUtilsService implements _TextUtilsService {
+export class TextService implements _TextService {
   public firstToUpper(input: string): string {
     return input
       .split("")

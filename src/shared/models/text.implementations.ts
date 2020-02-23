@@ -1,6 +1,6 @@
 import { Case } from "./text.models";
 
-export interface _TextUtilsService {
+export interface _TextService {
   firstToUpper: (input: string) => string;
   convertCase: (input: string, caseFrom: Case, caseTo: Case) => string;
 }
