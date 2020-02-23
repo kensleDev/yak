@@ -1,5 +1,6 @@
 import { CaseConverter } from "./convertCase.class";
-import { Case, _TextUtilsService } from "shared/models/text.models";
+import { Case } from "shared/models/text.models";
+import { _TextUtilsService } from "shared/models/text.implementations";
 
 export class TextUtilsService implements _TextUtilsService {
   public firstToUpper(input: string): string {

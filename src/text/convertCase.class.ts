@@ -1,10 +1,7 @@
-import {
-  Case,
-  CaseConverterErrors,
-  _CaseConverter
-} from "shared/models/text.models";
+import { Case, CaseConverterErrors } from "shared/models/text.models";
 
 import { TextUtilsService } from "./text.service";
+import { _CaseConverter } from "shared/models/text.implementations";
 const textS = new TextUtilsService();
 
 export class CaseConverter implements _CaseConverter {

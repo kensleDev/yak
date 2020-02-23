@@ -1,7 +1,7 @@
 console.log("it works ;)");
 
-import { CaseConverter } from "./text/convertCase.class";
+import { TextUtilsService } from "./text";
 
-const CC = new CaseConverter();
+const textS = new TextUtilsService();
 
-console.log(CC.convert("TestCase", "pascal", "normal"));
+console.log(textS.convertCase("TestCase", "pascal", "normal"));
