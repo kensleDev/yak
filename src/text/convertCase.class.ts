@@ -1,9 +1,16 @@
-export type Case = "normal" | "camel" | "pascal" | "snake" | "kebab" | "scream";
+import {
+  Case,
+  CaseConverterErrors,
+  _CaseConverter
+} from "shared/models/text.models";
 
-export class CaseConverter {
+import { TextUtilsService } from "./text.service";
+const textS = new TextUtilsService();
+
+export class CaseConverter implements _CaseConverter {
   // public uppercaseRegex = (/([A-Z])/g, ",$1");
 
-  private errors = {
+  private errors: CaseConverterErrors = {
     caseNotRecognised: (isFromCase: boolean) =>
       Error(`Case ${
         isFromCase ? "from" : "to"
@@ -17,14 +24,7 @@ export class CaseConverter {
     `)
   };
 
-  public firstToUpper(input: string): string {
-    return input
-      .split("")
-      .map((letter, index) => {
-        return index === 0 ? letter.toUpperCase() : letter;
-      })
-      .join("");
-  }
+  constructor() {}
 
   public convert(input: string, caseFrom: Case, caseTo: Case): string {
     const caseArr = this.splitCaseStringToLower(input, caseFrom);
@@ -77,13 +77,13 @@ export class CaseConverter {
     else if (caseTo === "camel")
       return input
         .map((word, index) => {
-          return index > 0 ? this.firstToUpper(word) : word;
+          return index > 0 ? textS.firstToUpper(word) : word;
         })
         .join("");
     else if (caseTo === "pascal")
       return input
         .map(word => {
-          return this.firstToUpper(word);
+          return textS.firstToUpper(word);
         })
         .join("");
     else this.errors.caseNotRecognised(false);

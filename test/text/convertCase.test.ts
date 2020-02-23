@@ -1,4 +1,4 @@
-import { CaseConverter } from "../../src/text/convertCase";
+import { CaseConverter } from "../../src/text/convertCase.class";
 let testPhase = "";
 const CC = new CaseConverter();
 
@@ -37,4 +37,26 @@ test("CaseConverter - 2 words", () => {
   expect(CC.convert(testPhase, "pascal", "scream")).toBe("TEST_CASE");
   expect(CC.convert(testPhase, "pascal", "snake")).toBe("test_case");
   expect(CC.convert(testPhase, "pascal", "camel")).toBe("testCase");
+});
+
+test("CaseConverter - Edges", () => {
+  testPhase = "test case one";
+  expect(CC.convert(testPhase, "normal", "kebab")).toBe("test-case-one");
+
+  testPhase = "test case one one one";
+  expect(CC.convert(testPhase, "normal", "kebab")).toBe(
+    "test-case-one-one-one"
+  );
+
+  testPhase = "test-case-one";
+  expect(CC.convert(testPhase, "kebab", "normal")).toBe("test case one");
+
+  testPhase = "test_case_one";
+  expect(CC.convert(testPhase, "snake", "normal")).toBe("test case one");
+
+  testPhase = "testCaseOne";
+  expect(CC.convert(testPhase, "camel", "normal")).toBe("test case one");
+
+  testPhase = "TestCaseOne";
+  expect(CC.convert(testPhase, "pascal", "normal")).toBe("test case one");
 });

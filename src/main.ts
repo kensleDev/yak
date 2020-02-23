@@ -1,6 +1,6 @@
 console.log("it works ;)");
 
-import { CaseConverter } from "./text/convertCase";
+import { CaseConverter } from "./text/convertCase.class";
 
 const CC = new CaseConverter();
 
