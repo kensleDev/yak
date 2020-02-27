@@ -1,7 +1,7 @@
 console.log("it works ;)");
 
-import { TextUtilsService } from "./text";
+import { TextService } from "./services/text/text.service";
 
-const textS = new TextUtilsService();
+const textS = new TextService();
 
 console.log(textS.convertCase("TestCase", "pascal", "normal"));
