@@ -1,3 +1,4 @@
-export * from "./pipe";
-export * from "./text/firstToUpper";
-export * from "./text/reverse";
+export * from "./text";
+export * from "./number";
+export * from "./utils";
+export * from "./array";

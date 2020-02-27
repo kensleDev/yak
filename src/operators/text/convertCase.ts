@@ -1,5 +1,6 @@
-import { Case, CaseConverterErrors } from "shared/models/text.models";
-import { _CaseConverter } from "shared/models/text.implementations";
+import { Case, CaseConverterErrors } from "../../shared/models/text.models";
+import { _CaseConverter } from "../../shared/models/text.implementations";
+
 import { firstToUpper } from "./firstToUpper";
 
 class CaseConverter implements _CaseConverter {
@@ -57,7 +58,7 @@ class CaseConverter implements _CaseConverter {
     else if (caseFrom === "scream") return splittable(input, "_");
     else if (caseFrom === "camel") return splitOnUpper(input);
     else if (caseFrom === "pascal") {
-      console.log(splitOnUpper(input));
+      // console.log(splitOnUpper(input));
       return splitOnUpper(input);
     } else this.errors.caseNotRecognised(true);
     return ["error"];
@@ -86,6 +87,8 @@ class CaseConverter implements _CaseConverter {
   }
 }
 
-const CC = new CaseConverter();
-
-export const convertCase = (input, from, to) => CC.convert(input, from, to);
+export const convertCase = (from, to) => (value: string) => {
+  const CC = new CaseConverter();
+  // console.log(input);
+  return CC.convert(value, from, to);
+};

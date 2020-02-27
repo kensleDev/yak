@@ -1,120 +1,252 @@
-export interface Currency {
-  currency: string;
-  abbreviation: string;
-  symbol?: string;
+export interface Currencies {
+  USD: CurrencyData;
+  CAD: CurrencyData;
+  EUR: CurrencyData;
+  AED: CurrencyData;
+  AFN: CurrencyData;
+  ALL: CurrencyData;
+  AMD: CurrencyData;
+  ARS: CurrencyData;
+  AUD: CurrencyData;
+  AZN: CurrencyData;
+  BAM: CurrencyData;
+  BDT: CurrencyData;
+  BGN: CurrencyData;
+  BHD: CurrencyData;
+  BIF: CurrencyData;
+  BND: CurrencyData;
+  BOB: CurrencyData;
+  BRL: CurrencyData;
+  BWP: CurrencyData;
+  BYN: CurrencyData;
+  BZD: CurrencyData;
+  CDF: CurrencyData;
+  CHF: CurrencyData;
+  CLP: CurrencyData;
+  CNY: CurrencyData;
+  COP: CurrencyData;
+  CRC: CurrencyData;
+  CVE: CurrencyData;
+  CZK: CurrencyData;
+  DJF: CurrencyData;
+  DKK: CurrencyData;
+  DOP: CurrencyData;
+  DZD: CurrencyData;
+  EEK: CurrencyData;
+  EGP: CurrencyData;
+  ERN: CurrencyData;
+  ETB: CurrencyData;
+  GBP: CurrencyData;
+  GEL: CurrencyData;
+  GHS: CurrencyData;
+  GNF: CurrencyData;
+  GTQ: CurrencyData;
+  HKD: CurrencyData;
+  HNL: CurrencyData;
+  HRK: CurrencyData;
+  HUF: CurrencyData;
+  IDR: CurrencyData;
+  ILS: CurrencyData;
+  INR: CurrencyData;
+  IQD: CurrencyData;
+  IRR: CurrencyData;
+  ISK: CurrencyData;
+  JMD: CurrencyData;
+  JOD: CurrencyData;
+  JPY: CurrencyData;
+  KES: CurrencyData;
+  KHR: CurrencyData;
+  KMF: CurrencyData;
+  KRW: CurrencyData;
+  KWD: CurrencyData;
+  KZT: CurrencyData;
+  LBP: CurrencyData;
+  LKR: CurrencyData;
+  LTL: CurrencyData;
+  LVL: CurrencyData;
+  LYD: CurrencyData;
+  MAD: CurrencyData;
+  MDL: CurrencyData;
+  MGA: CurrencyData;
+  MKD: CurrencyData;
+  MMK: CurrencyData;
+  MOP: CurrencyData;
+  MUR: CurrencyData;
+  MXN: CurrencyData;
+  MYR: CurrencyData;
+  MZN: CurrencyData;
+  NAD: CurrencyData;
+  NGN: CurrencyData;
+  NIO: CurrencyData;
+  NOK: CurrencyData;
+  NPR: CurrencyData;
+  NZD: CurrencyData;
+  OMR: CurrencyData;
+  PAB: CurrencyData;
+  PEN: CurrencyData;
+  PHP: CurrencyData;
+  PKR: CurrencyData;
+  PLN: CurrencyData;
+  PYG: CurrencyData;
+  QAR: CurrencyData;
+  RON: CurrencyData;
+  RSD: CurrencyData;
+  RUB: CurrencyData;
+  RWF: CurrencyData;
+  SAR: CurrencyData;
+  SDG: CurrencyData;
+  SEK: CurrencyData;
+  SGD: CurrencyData;
+  SOS: CurrencyData;
+  SYP: CurrencyData;
+  THB: CurrencyData;
+  TND: CurrencyData;
+  TOP: CurrencyData;
+  TRY: CurrencyData;
+  TTD: CurrencyData;
+  TWD: CurrencyData;
+  TZS: CurrencyData;
+  UAH: CurrencyData;
+  UGX: CurrencyData;
+  UYU: CurrencyData;
+  UZS: CurrencyData;
+  VEF: CurrencyData;
+  VND: CurrencyData;
+  XAF: CurrencyData;
+  XOF: CurrencyData;
+  YER: CurrencyData;
+  ZAR: CurrencyData;
+  ZMK: CurrencyData;
+  ZWL: CurrencyData;
+}
+
+export interface CurrencyData {
+  symbol: string;
+  name: string;
+  symbol_native: string;
+  decimal_digits: number;
+  rounding: number;
+  code: string;
+  name_plural: string;
 }
 
 export type CountryCode =
+  | "USD"
+  | "CAD"
+  | "EUR"
+  | "AED"
   | "AFN"
+  | "ALL"
+  | "AMD"
   | "ARS"
-  | "AWG"
   | "AUD"
   | "AZN"
-  | "BSD"
-  | "BBD"
-  | "BYR"
-  | "BZD"
-  | "BMD"
-  | "BOB"
   | "BAM"
-  | "BWP"
+  | "BDT"
   | "BGN"
-  | "BRL"
+  | "BHD"
+  | "BIF"
   | "BND"
-  | "KHR"
-  | "CAD"
-  | "KYD"
+  | "BOB"
+  | "BRL"
+  | "BWP"
+  | "BYN"
+  | "BZD"
+  | "CDF"
+  | "CHF"
   | "CLP"
   | "CNY"
   | "COP"
   | "CRC"
-  | "HRK"
-  | "CUP"
+  | "CVE"
   | "CZK"
+  | "DJF"
   | "DKK"
   | "DOP"
-  | "XCD"
-  | "EGP"
-  | "SVC"
+  | "DZD"
   | "EEK"
-  | "EUR"
-  | "FKP"
-  | "FJD"
-  | "GHC"
-  | "GIP"
+  | "EGP"
+  | "ERN"
+  | "ETB"
+  | "GBP"
+  | "GEL"
+  | "GHS"
+  | "GNF"
   | "GTQ"
-  | "GGP"
-  | "GYD"
-  | "HNL"
   | "HKD"
+  | "HNL"
+  | "HRK"
   | "HUF"
-  | "ISK"
-  | "INR"
   | "IDR"
-  | "IRR"
-  | "IMP"
   | "ILS"
+  | "INR"
+  | "IQD"
+  | "IRR"
+  | "ISK"
   | "JMD"
+  | "JOD"
   | "JPY"
-  | "JEP"
-  | "KZT"
-  | "KPW"
+  | "KES"
+  | "KHR"
+  | "KMF"
   | "KRW"
-  | "KGS"
-  | "LAK"
-  | "LVL"
+  | "KWD"
+  | "KZT"
   | "LBP"
-  | "LRD"
+  | "LKR"
   | "LTL"
+  | "LVL"
+  | "LYD"
+  | "MAD"
+  | "MDL"
+  | "MGA"
   | "MKD"
-  | "MYR"
+  | "MMK"
+  | "MOP"
   | "MUR"
   | "MXN"
-  | "MNT"
+  | "MYR"
   | "MZN"
   | "NAD"
-  | "NPR"
-  | "ANG"
-  | "NZD"
-  | "NIO"
   | "NGN"
-  | "KPW"
+  | "NIO"
   | "NOK"
+  | "NPR"
+  | "NZD"
   | "OMR"
-  | "PKR"
   | "PAB"
-  | "PYG"
   | "PEN"
   | "PHP"
+  | "PKR"
   | "PLN"
+  | "PYG"
   | "QAR"
   | "RON"
-  | "RUB"
-  | "SHP"
-  | "SAR"
   | "RSD"
-  | "SCR"
-  | "SGD"
-  | "SBD"
-  | "SOS"
-  | "ZAR"
-  | "KRW"
-  | "LKR"
+  | "RUB"
+  | "RWF"
+  | "SAR"
+  | "SDG"
   | "SEK"
-  | "CHF"
-  | "SRD"
+  | "SGD"
+  | "SOS"
   | "SYP"
-  | "TWD"
   | "THB"
-  | "TTD"
+  | "TND"
+  | "TOP"
   | "TRY"
-  | "TRL"
-  | "TVD"
+  | "TTD"
+  | "TWD"
+  | "TZS"
   | "UAH"
-  | "GBP"
-  | "USD"
+  | "UGX"
   | "UYU"
   | "UZS"
   | "VEF"
   | "VND"
-  | "YER";
+  | "XAF"
+  | "XOF"
+  | "YER"
+  | "ZAR"
+  | "ZMK"
+  | "ZWL";

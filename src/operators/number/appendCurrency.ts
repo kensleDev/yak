@@ -1,18 +1,16 @@
-import { CountryCode, Currency } from "shared/models/number.models";
-
+import { CountryCode, Currencies } from "../../shared/models";
 import { currenciesData } from "../../services/data/json.service";
 
 export const appendCurrency = (
-  input: number | string,
-  countryCode: CountryCode
-) => {
-  // get country information
+  countryCode: CountryCode,
+  dilimeter?: string
+) => (input: string) => {
+  // console.log(countryCode);
+  const currencies: Currencies = currenciesData;
 
-  const currencies: Currency[] = currenciesData;
+  const currentCountry = currencies[countryCode];
 
-  const currencySymbol = currencies
-    .filter(currency => currency.abbreviation === countryCode)
-    .map(currency => currency.symbol)[0];
-
-  return currencySymbol + input;
+  return dilimeter
+    ? currentCountry.symbol_native + dilimeter + input
+    : currentCountry.symbol_native + input;
 };

@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "outDir": "build",
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es2017",
+    "lib": ["es2019"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "sourceMap": true,
     "typeRoots": ["../node_modules/@types"],
     "types": ["jest", "node"],
+    "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/*"],
-      "@text": ["src/services/text/*"]
-      // "jquery": [
-      //   "node_modules/jquery/dist/jquery"
-      // ] // This mapping is relative to "baseUrl"
+      "@app/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],
