@@ -1,4 +1,4 @@
 export * from "./text.models";
-export * from "./number.implementations";
+export * from "./currency.implementations";
 export * from "./text.implementations";
-export * from "./number.models";
+export * from "./currency.models";

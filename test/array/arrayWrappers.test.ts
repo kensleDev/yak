@@ -5,7 +5,7 @@ import {
   filter,
   findIndex,
   join
-} from "../../../src/operators";
+} from "../../src/operators";
 
 test("Operators - number = appendCurrency ", () => {
   expect(pipe(map(el => el * 2))([10])).toEqual([20]);

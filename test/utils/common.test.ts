@@ -5,9 +5,7 @@ import {
   appendCurrency,
   logger,
   map
-} from "../../../src/operators";
-
-import { log } from "util";
+} from "../../src/operators";
 
 test("operators - pipe", () => {
   expect(pipe(reverse, firstToUpper, appendCurrency("USD"))("test")).toBe(

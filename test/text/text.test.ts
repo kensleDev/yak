@@ -1,4 +1,4 @@
-import { reverse, firstToUpper, convertCase } from "../../../src/operators";
+import { reverse, firstToUpper, convertCase } from "../../src/operators";
 
 test("operators - text - reverse ", () => {
   expect(reverse("test")).toBe("tset");

@@ -1,4 +1,4 @@
-import { appendCurrency } from "../../../src/operators";
+import { appendCurrency } from "../../src/operators";
 
 test("Operators - number = appendCurrency ", () => {
   expect(appendCurrency("GBP")("test")).toBe("£test");
